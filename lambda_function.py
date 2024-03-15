@@ -19,7 +19,7 @@ def lambda_handler(event, context):
         s3_key = f'{booking_id}.json' 
         s3_client = boto3.client('s3')
         s3_client.put_object(
-            Body=body_json,
+            Body=booking_data,
             Bucket=s3_bucket_name,
             Key=s3_key
         )
